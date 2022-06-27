@@ -1,5 +1,5 @@
-<h1 align="center">VueDragDrop</h1>
-<p align="center">一款vue的拖拽组件！</p>
+<h1 align="center">VueFreeDrag</h1>
+<p align="center">一款基于vue的极简拖拽组件！让你自由拖动！</p>
 
 #### 介绍
 

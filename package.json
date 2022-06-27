@@ -1,8 +1,8 @@
 {
-  "name": "vue-drag-drop",
+  "name": "vue-free-drag",
   "version": "0.1.0",
   "author": "iMaldway",
-  "description": "拖拽组件。可通过容器设置拖拽范围。",
+  "description": "极简拖拽组件。可通过容器设置拖拽范围。",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,6 +11,7 @@
   },
   "keywords": [
     "vue",
+    "free drag",
     "vue-drag-drop",
     "Drag and drop",
     "拖拽"
@@ -21,12 +22,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iMaldway/vue-drag-drop.git"
+    "url": "git+https://github.com/iMaldway/vue-free-drag.git"
   },
   "bugs": {
-    "url": "https://github.com/iMaldway/vue-drag-drop/issues"
+    "url": "https://github.com/iMaldway/vue-free-drag/issues"
   },
-  "homepage": "https://github.com/iMaldway/vue-drag-drop#readme",
+  "homepage": "https://github.com/iMaldway/vue-free-drag#readme",
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
