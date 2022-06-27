@@ -1,12 +1,24 @@
 {
   "name": "vue-drag-drop",
   "version": "0.1.0",
-  "private": true,
+  "author": "iMaldway",
+  "description": "拖拽组件。可通过容器设置拖拽范围。",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "keywords": [
+    "vue",
+    "vue-drag-drop",
+    "Drag and drop",
+    "拖拽"
+  ],
+  "main": "src/components/index.js",
+  "files": [
+    "src/components/"
+  ],
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
@@ -18,7 +30,9 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^12.6.0"
   },
   "eslintConfig": {
     "root": true,
@@ -30,7 +44,10 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser"
+      "parser": "@babel/eslint-parser",
+      "requireConfigFile": false,
+      "ecmaVersion": 2018,
+      "sourceType": "module"
     },
     "rules": {}
   },

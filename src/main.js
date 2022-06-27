@@ -1,4 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import DragDrop from './components/index.js'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(DragDrop);
+app.mount('#app')
