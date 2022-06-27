@@ -19,6 +19,14 @@
   "files": [
     "src/components/"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMaldway/vue-drag-drop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iMaldway/vue-drag-drop/issues"
+  },
+  "homepage": "https://github.com/iMaldway/vue-drag-drop#readme",
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
