@@ -58,7 +58,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style>
 .drag-drop-container {
     display: inline-block;
     position: relative;

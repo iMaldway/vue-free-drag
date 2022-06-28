@@ -162,7 +162,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style>
 .drag-drop {
     display: inline-block;
     position: absolute;
