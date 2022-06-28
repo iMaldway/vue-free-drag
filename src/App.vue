@@ -1,25 +1,33 @@
 <template>
   <DragDropContainer id="conta" :width="500" :height="500">
-    <DragDrop id="789">
+    <DragDrop id="789" @change="dragDropChange">
       <div style="width: 100px;height:100px;background-color:bisque;">
         <div>测试<span>内容</span></div>
       </div>
     </DragDrop>
-    <DragDrop id="234" :initialLeft="100">
+    <DragDrop id="234" @change="dragDropChange" :initialLeft="100">
       <div style="width: 100px;height:100px;background-color: aquamarine;"></div>
     </DragDrop>
   </DragDropContainer>
-  <DragDrop id="122" :initialLeft="600">
+  <DragDrop id="122" @change="dragDropChange" :initialLeft="600">
     <div style="width: 100px;height:100px;background-color: aquamarine;"></div>
   </DragDrop>
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'App',
-  components: {
+  components: {},
+  setup() {
+    const dragDropChange = ({ id, left, top }) => {
+      console.log(id, left, top)
+    }
+    return { dragDropChange }
   }
-}
+})
+
+
 </script>
 
 <style>

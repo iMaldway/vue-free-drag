@@ -1,8 +1,8 @@
 {
   "name": "vue-free-drag",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "iMaldway",
-  "description": "极简拖拽组件。可通过容器设置拖拽范围。",
+  "description": "基于Vue3的极简拖拽组件。可通过容器设置拖拽范围。",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,6 +11,7 @@
   },
   "keywords": [
     "vue",
+    "vue3",
     "free drag",
     "vue-drag-drop",
     "Drag and drop",

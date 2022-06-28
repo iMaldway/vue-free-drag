@@ -10,6 +10,7 @@ import { defineComponent, onMounted, ref, onDeactivated } from 'vue'
 export default defineComponent({
     name: 'DragDrop',
     components: {},
+    emits: ['change'],
     props: {
         id: {
             type: String,
@@ -24,7 +25,7 @@ export default defineComponent({
             default: 0
         }
     },
-    setup(props) {
+    setup(props, { emit }) {
         // 父级
         let parent = null;
         // 移动状态
@@ -51,7 +52,16 @@ export default defineComponent({
         }
         // 鼠标放开事件
         const mouseupEvent = () => {
-            dragging = false
+            if (dragging) {
+                dragging = false
+                let nowLeft = nowItem.style.left.replace('px', '');
+                let nowTop = nowItem.style.top.replace('px', '');
+                emit('change', {
+                    id: props.id,
+                    left: Number(nowLeft),
+                    top: Number(nowTop)
+                })
+            }
         }
         // 鼠标移动事件
         const mousemoveEvent = (e) => {
@@ -87,7 +97,16 @@ export default defineComponent({
             }
         }
         const mouseoutEvent = () => {
-            dragging = false
+            if (dragging) {
+                dragging = false
+                let nowLeft = nowItem.style.left.replace('px', '');
+                let nowTop = nowItem.style.top.replace('px', '');
+                emit('change', {
+                    id: props.id,
+                    left: Number(nowLeft),
+                    top: Number(nowTop)
+                })
+            }
         }
         // 找到容器
         onMounted(() => {
