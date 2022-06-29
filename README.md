@@ -37,16 +37,41 @@
 
 ```html
 <DragDropContainer id="conta" :width="500" :height="500">
-  <DragDrop id="789" @change="dragDropChange">
+  <DragDrop id="789" @change="dragDropChange" :lockingX="true">
     <div style="width: 100px;height:100px;background-color:bisque;">
-      <div>测试<span>内容</span></div>
+      <div>锁定X轴</div>
     </div>
   </DragDrop>
-  <DragDrop id="234" @change="dragDropChange" :initialLeft="100">
-    <div style="width: 100px;height:100px;background-color: aquamarine;"></div>
+  <DragDrop
+    id="xxx"
+    @change="dragDropChange"
+    :initialTop="100"
+    :lockingY="true"
+  >
+    <div style="width: 100px;height:100px;background-color:bisque;">
+      <div>锁定Y轴</div>
+    </div>
+  </DragDrop>
+  <DragDrop
+    id="234"
+    @change="dragDropChange"
+    @move="dragDropMove"
+    :initialLeft="100"
+  >
+    <div style="width: 100px;height:100px;background-color: aquamarine;">
+      联动主体
+    </div>
   </DragDrop>
 </DragDropContainer>
-<DragDrop id="122" @change="dragDropChange" :initialLeft="600">
-  <div style="width: 100px;height:100px;background-color: aquamarine;"></div>
+<DragDrop
+  id="122"
+  @change="dragDropChange"
+  :initialLeft="initialLeft"
+  :initialTop="initialTop"
+  :locking="false"
+>
+  <div style="width: 100px;height:100px;background-color: aquamarine;">
+    联动客体
+  </div>
 </DragDrop>
 ```
