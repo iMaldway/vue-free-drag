@@ -10,11 +10,23 @@ import { defineComponent, onMounted, ref, onDeactivated } from 'vue'
 export default defineComponent({
     name: 'DragDrop',
     components: {},
-    emits: ['change'],
+    emits: ['change', 'move'],
     props: {
         id: {
             type: String,
             required: true
+        },
+        locking: {
+            type: Boolean,
+            default: true
+        },
+        lockingX: {
+            type: Boolean,
+            default: false
+        },
+        lockingY: {
+            type: Boolean,
+            default: false
         },
         initialTop: {
             type: Number,
@@ -52,7 +64,7 @@ export default defineComponent({
         }
         // 鼠标放开事件
         const mouseupEvent = () => {
-            if (dragging) {
+            if (dragging && props.locking) {
                 dragging = false
                 let nowLeft = nowItem.style.left.replace('px', '');
                 let nowTop = nowItem.style.top.replace('px', '');
@@ -65,7 +77,7 @@ export default defineComponent({
         }
         // 鼠标移动事件
         const mousemoveEvent = (e) => {
-            if (dragging) {
+            if (dragging && props.locking) {
                 //当前元素对象
                 let moveX = e.clientX - left;
                 let moveY = e.clientY - top;
@@ -92,12 +104,21 @@ export default defineComponent({
                         moveY = topMax - nowHeight
                     }
                 }
-                nowItem.style.left = moveX + 'px';
-                nowItem.style.top = moveY + 'px';
+                if (!props.lockingX) {
+                    nowItem.style.left = moveX + 'px';
+                }
+                if (!props.lockingY) {
+                    nowItem.style.top = moveY + 'px';
+                }
+                emit('move', {
+                    id: props.id,
+                    left: Number(moveX),
+                    top: Number(moveY)
+                })
             }
         }
         const mouseoutEvent = () => {
-            if (dragging) {
+            if (dragging && props.locking) {
                 dragging = false
                 let nowLeft = nowItem.style.left.replace('px', '');
                 let nowTop = nowItem.style.top.replace('px', '');

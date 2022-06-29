@@ -17,17 +17,21 @@
 
 ### DragDrop 组件属性
 
-| 属性名      | 类型   | 说明              |
-| ----------- | ------ | ----------------- |
-| id          | String | 唯一标识          |
-| initialTop  | Number | 初始距离容器 top  |
-| initialLeft | Number | 初始距离容器 left |
+| 属性名      | 类型    | 说明                      |
+| ----------- | ------- | ------------------------- |
+| id          | String  | 唯一标识                  |
+| locking     | Boolean | 是否可以移动，默认为 true |
+| lockingX    | Boolean | 锁定 X 轴，默认为 false   |
+| lockingY    | Boolean | 锁定 Y 轴，默认为 false   |
+| initialTop  | Number  | 初始距离容器 top          |
+| initialLeft | Number  | 初始距离容器 left         |
 
 ### DragDrop 组件事件
 
 | 属性名 | 参数 | 说明                                                    |
 | ------ | ---- | ------------------------------------------------------- |
 | change | none | {id\|String,left\|Number,top\|Number}。组件拖拽停止事件 |
+| move   | none | {id\|String,left\|Number,top\|Number}。组件拖拽移动事件 |
 
 ### 使用说明
 

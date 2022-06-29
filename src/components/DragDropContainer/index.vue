@@ -25,17 +25,9 @@ export default defineComponent({
     },
     setup() {
         let dragDropContainerRef = ref()
-        let childrens = []
+        let childrens = ref([])
         onMounted(() => {
-            if (dragDropContainerRef && dragDropContainerRef.value) {
-                // 持有所有符合的子级，考虑实现子级碰撞检测
-                for (let i in dragDropContainerRef.value.children) {
-                    let item = dragDropContainerRef.value.children[i]
-                    if (isChildren(item)) {
-                        childrens.push(item)
-                    }
-                }
-            }
+            obtainChildren()
         })
         // 是否是子级
         const isChildren = (HTMLCollection) => {
@@ -48,11 +40,24 @@ export default defineComponent({
             }
             return is
         }
+        // 获取子级
+        const obtainChildren = () => {
+            if (dragDropContainerRef && dragDropContainerRef.value) {
+                childrens = ref([])
+                // 持有所有符合的子级，考虑实现子级碰撞检测
+                for (let i in dragDropContainerRef.value.children) {
+                    let item = dragDropContainerRef.value.children[i]
+                    if (isChildren(item)) {
+                        childrens.value.push(item)
+                    }
+                }
+            }
+        }
         onDeactivated(() => {
             childrens = undefined;
         })
         return {
-            dragDropContainerRef
+            dragDropContainerRef, obtainChildren, childrens
         }
     }
 })
