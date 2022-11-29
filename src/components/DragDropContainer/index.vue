@@ -56,9 +56,6 @@ export default defineComponent({
     const obtainChildren = () => {
       childrens = ref([])
       ids.value = []
-      // 子集集合中第一个是自身；
-      let nowItem = document.getElementById(props.id)
-      childrens.value.push(nowItem)
       if (dragDropContainerRef && dragDropContainerRef.value) {
         // 持有所有符合的子级，考虑实现子级碰撞检测
         for (let i in dragDropContainerRef.value.children) {
@@ -68,6 +65,9 @@ export default defineComponent({
           }
         }
       }
+      // 子集集合中最后一个是自身；
+      let nowItem = document.getElementById(props.id)
+      childrens.value.push(nowItem)
       for (let i = 0; i < childrens.value.length; i++) {
         let item = childrens.value[i]
         const id = item.attributes?.id || {}
@@ -92,6 +92,7 @@ export default defineComponent({
 .drag-drop-container {
   display: inline-block;
   position: relative;
+  box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

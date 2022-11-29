@@ -1,6 +1,6 @@
 {
   "name": "vue-free-drag",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "iMaldway",
   "description": "基于Vue3的极简拖拽组件。可通过容器设置拖拽范围。",
   "private": false,

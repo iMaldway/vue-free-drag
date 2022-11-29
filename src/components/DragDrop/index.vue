@@ -225,7 +225,7 @@ export default defineComponent({
                     isMeetLeft < 0 &&
                     isMeetRight < 0
                   ) {
-                    console.log('在物体' + id + '下边越界', isMeetTop, isMeetLeft, isMeetRight)
+                    // console.log('在物体' + id + '下边越界', isMeetTop, isMeetLeft, isMeetRight)
                     // 在上下面中，如果锁Y轴，则x移动
                     if (isMeetTop >= isMeetLeft && isMeetTop >= isMeetRight && !props.lockingY) {
                       moveY = topMini - nowHeight
@@ -235,7 +235,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetLeft > isMeetRight &&
                       isMeetLeft >= isMeetTop &&
@@ -248,7 +247,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetRight > isMeetLeft &&
                       isMeetRight >= isMeetTop &&
@@ -261,7 +259,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     }
                   }
                 }
@@ -274,7 +271,7 @@ export default defineComponent({
                     isMeetLeft < 0 &&
                     isMeetRight < 0
                   ) {
-                    console.log('在物体' + id + '上边越界', isMeetBottom, isMeetLeft, isMeetRight)
+                    // console.log('在物体' + id + '上边越界', isMeetBottom, isMeetLeft, isMeetRight)
                     // 在上下面中，如果锁Y轴，则x移动
                     if (
                       isMeetBottom >= isMeetLeft &&
@@ -288,7 +285,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetLeft > isMeetRight &&
                       isMeetLeft >= isMeetBottom &&
@@ -301,7 +297,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetRight > isMeetLeft &&
                       isMeetRight >= isMeetBottom &&
@@ -314,7 +309,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     }
                   }
                 }
@@ -329,7 +323,7 @@ export default defineComponent({
                     isMeetTop < 0 &&
                     isMeetBottom < 0
                   ) {
-                    console.log('在物体' + id + '左边越界', isMeetLeft, isMeetTop, isMeetBottom)
+                    // console.log('在物体' + id + '左边越界', isMeetLeft, isMeetTop, isMeetBottom)
                     // 在左右面中，如果锁X轴，则Y移动
                     if (isMeetLeft >= isMeetTop && isMeetLeft >= isMeetBottom && !props.lockingX) {
                       moveX = leftMini - nowWidth
@@ -339,7 +333,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetTop > isMeetLeft &&
                       isMeetTop >= isMeetBottom &&
@@ -352,7 +345,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetBottom > isMeetLeft &&
                       isMeetBottom >= isMeetTop &&
@@ -365,7 +357,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     }
                   }
                 }
@@ -378,7 +369,7 @@ export default defineComponent({
                     isMeetTop < 0 &&
                     isMeetBottom < 0
                   ) {
-                    console.log('在物体' + id + '右边越界', isMeetRight, isMeetTop, isMeetBottom)
+                    // console.log('在物体' + id + '右边越界', isMeetRight, isMeetTop, isMeetBottom)
                     /**
                      * 比较在右边三边距离最大值
                      */
@@ -395,7 +386,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetTop > isMeetRight &&
                       isMeetTop >= isMeetBottom &&
@@ -408,7 +398,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     } else if (
                       isMeetBottom > isMeetRight &&
                       isMeetBottom >= isMeetTop &&
@@ -421,7 +410,6 @@ export default defineComponent({
                         left: Number(moveX),
                         top: Number(moveY)
                       })
-                      continue
                     }
                   }
                 }
